@@ -6,7 +6,6 @@ ionic capacitor串口插件
 
 ```bash
 npm install capacitor-serialport
-npx cap sync
 ```
 
 ## API
