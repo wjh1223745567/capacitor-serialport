@@ -66,6 +66,11 @@ import { Serialport } from "capacitor-serialport";
 //使用
 Serialport.connSerialPort({serialPath: "/dev/ttyS3", baudRate: 115200, flags: 0})
 
+//监听串口返回数据
+window.addEventListener("serialportdata", (val) => {
+    console.log("页面串口数据:", JSON.stringify(val))
+})
+
 ```
 
 </docgen-api>
