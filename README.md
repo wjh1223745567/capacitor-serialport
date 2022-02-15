@@ -1,6 +1,6 @@
 # serialport
 
-capacitor串口插件
+ionic capacitor串口插件
 
 ## Install
 
@@ -52,10 +52,20 @@ makezero() => Promise<void>
 connSerialPort(options: { serialPath: string; baudRate: number; flags: number; }) => Promise<void>
 ```
 
-| Param         | Type                                                                  |
-| ------------- | --------------------------------------------------------------------- |
-| **`options`** | <code>{ serialPath: string; baudRate: number; flags: number; }</code> |
+| Param         | Type                                                                  | remark |
+| ------------- | --------------------------------------------------------------------- | -------------- |
+| **`options`** | <code>{ serialPath: string; baudRate: number; flags: number; }</code> | 连接串口参数：串口路径，波特率，1 |
 
 --------------------
+
+### 事例
+```typescript
+//引入
+import { Serialport } from "capacitor-serialport";
+
+//使用
+Serialport.connSerialPort({serialPath: "/dev/ttyS3", baudRate: 115200, flags: 0})
+
+```
 
 </docgen-api>
