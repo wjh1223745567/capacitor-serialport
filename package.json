@@ -1,7 +1,7 @@
 {
   "name": "capacitor-serialport",
   "version": "0.0.1",
-  "description": "serialport android serial port",
+  "description": "capacitor串口插件",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

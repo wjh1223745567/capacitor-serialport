@@ -1,11 +1,11 @@
 # serialport
 
-serialport android serial port
+capacitor串口插件
 
 ## Install
 
 ```bash
-npm install serialport
+npm install capacitor-serialport
 npx cap sync
 ```
 
