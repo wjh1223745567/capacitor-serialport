@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Serialport {
@@ -33,5 +34,10 @@ public class Serialport {
         List<String> list = serial.getAllSerialPortPath();
         Log.i("查看列表串口", JSON.toJSONString(list));
         serial.openSerialPort(serialPath, baudRate, flags);
+    }
+
+    public void sendPortMsg(String msg){
+        Log.i("安卓发送串口数据", msg);
+        serial.sendSerialPort(msg.getBytes(StandardCharsets.UTF_8));
     }
 }

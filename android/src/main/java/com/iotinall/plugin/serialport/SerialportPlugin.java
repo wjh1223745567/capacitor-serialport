@@ -50,4 +50,14 @@ public class SerialportPlugin extends Plugin {
         bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
         testvalue++;
     }
+
+    /**
+     * 发送串口数据
+     * @param call
+     */
+    @PluginMethod
+    public void sendPortMsg(PluginCall call){
+        implementation.sendPortMsg(call.getString("msg"));
+        call.resolve();
+    }
 }

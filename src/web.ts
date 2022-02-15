@@ -13,4 +13,7 @@ export class SerialportWeb extends WebPlugin implements SerialportPlugin {
   async connSerialPort(options: {serialPath: string, baudRate: number, flags: number}): Promise<void> {
     console.log("页面连接串口调用", JSON.stringify(options))
   }
+  async sendPortMsg(options: {msg: string}): Promise<void>{
+    console.log("页面发送串口指令", JSON.stringify(options))
+  }
 }
