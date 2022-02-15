@@ -15,6 +15,7 @@ npm install capacitor-serialport
 * [`echo(...)`](#echo)
 * [`makezero()`](#makezero)
 * [`connSerialPort(...)`](#connserialport)
+* [`sendPortMsg(...)`](#sendportmsg)
 
 </docgen-index>
 
@@ -57,16 +58,17 @@ connSerialPort(options: { serialPath: string; baudRate: number; flags: number; }
 
 --------------------
 
-### 事例
+
+### sendPortMsg(...)
+
 ```typescript
-//引用
-import { Serialport } from "capacitor-serialport";
-//使用
-Serialport.connSerialPort({serialPath: "/dev/ttyS3", baudRate: 115200, flags: 0})
-//监听串口回调数据
-window.addEventListener("serialportdata", (val) => {
-    console.log("页面串口数据:", JSON.stringify(val))
-})
+sendPortMsg(options: { msg: string; }) => Promise<void>
 ```
+
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ msg: string; }</code> |
+
+--------------------
 
 </docgen-api>
