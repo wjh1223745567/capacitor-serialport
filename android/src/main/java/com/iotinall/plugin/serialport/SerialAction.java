@@ -20,14 +20,20 @@ public class SerialAction implements SerialController.OnSerialListener {
     public void onReceivedData(byte[] data, int size) {
         String str = new String(data, StandardCharsets.UTF_8).trim();
         lastMsg += str;
-        if(str.endsWith("}")){
-            Log.i("接收到完整串口数据：", lastMsg);
-            Map<String, String> dataMap = new HashMap<>();
-            dataMap.put("data", lastMsg);
-            bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
+        try {
+            if(str.endsWith("}")){
+                lastMsg = lastMsg.replace("None", "\"\"");
+                Log.i("接收到完整串口数据：", lastMsg);
+                Map<String, WeightDataDto> dataMap = new HashMap<>();
+                dataMap.put("data", JSON.parseObject(lastMsg, WeightDataDto.class));
+                bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
+                lastMsg = "";
+            }else{
+                Log.i("收到部分串口数据}结尾", str);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
             lastMsg = "";
-        }else{
-            Log.i("收到部分串口数据}结尾", str);
         }
     }
 
