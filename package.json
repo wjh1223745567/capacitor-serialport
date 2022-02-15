@@ -74,8 +74,5 @@
     "android": {
       "src": "android"
     }
-  },
-  "dependencies": {
-    "serialport": "^9.2.8"
   }
 }

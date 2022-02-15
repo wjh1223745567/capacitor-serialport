@@ -51,25 +51,10 @@ makezero() => Promise<void>
 connSerialPort(options: { serialPath: string; baudRate: number; flags: number; }) => Promise<void>
 ```
 
-| Param         | Type                                                                  | remark |
-| ------------- | --------------------------------------------------------------------- | -------------- |
-| **`options`** | <code>{ serialPath: string; baudRate: number; flags: number; }</code> | 连接串口参数：串口路径，波特率，1 |
+| Param         | Type                                                                  |
+| ------------- | --------------------------------------------------------------------- |
+| **`options`** | <code>{ serialPath: string; baudRate: number; flags: number; }</code> |
 
 --------------------
-
-### 事例
-```typescript
-//引入
-import { Serialport } from "capacitor-serialport";
-
-//使用
-Serialport.connSerialPort({serialPath: "/dev/ttyS3", baudRate: 115200, flags: 0})
-
-//监听串口返回数据
-window.addEventListener("serialportdata", (val) => {
-    console.log("页面串口数据:", JSON.stringify(val))
-})
-
-```
 
 </docgen-api>
