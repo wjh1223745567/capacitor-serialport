@@ -21,9 +21,9 @@ public class SerialAction implements SerialController.OnSerialListener {
         String str = new String(data, StandardCharsets.UTF_8).trim();
         lastMsg += str;
         if(str.endsWith("}")){
-            Log.i("接收到完整串口数据：", str);
+            Log.i("接收到完整串口数据：", lastMsg);
             Map<String, String> dataMap = new HashMap<>();
-            dataMap.put("data", str);
+            dataMap.put("data", lastMsg);
             bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
             lastMsg = "";
         }else{
