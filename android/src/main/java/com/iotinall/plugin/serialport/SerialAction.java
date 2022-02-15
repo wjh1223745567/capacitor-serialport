@@ -18,10 +18,10 @@ public class SerialAction implements SerialController.OnSerialListener {
 
     @Override
     public void onReceivedData(byte[] data, int size) {
-        String str = new String(data, StandardCharsets.UTF_8);
+        String str = new String(data, StandardCharsets.UTF_8).trim();
         lastMsg += str;
         if(str.endsWith("\r\n")){
-            Log.i("接收到串口数据：", str);
+            Log.i("接收到完整串口数据：", str);
             Map<String, String> dataMap = new HashMap<>();
             dataMap.put("data", str);
             bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
