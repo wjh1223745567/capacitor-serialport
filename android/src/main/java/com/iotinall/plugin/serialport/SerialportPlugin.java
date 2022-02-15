@@ -44,11 +44,6 @@ public class SerialportPlugin extends Plugin {
         //返回事件触发
         SerialAction.bridge = bridge;
         call.resolve();
-
-        Map<String, String> dataMap = new HashMap<>();
-        dataMap.put("data", String.valueOf(testvalue));
-        bridge.triggerWindowJSEvent("serialportdata", JSON.toJSONString(dataMap));
-        testvalue++;
     }
 
     /**

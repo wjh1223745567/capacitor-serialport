@@ -1,6 +1,6 @@
 {
   "name": "capacitor-serialport",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "capacitor串口插件",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
