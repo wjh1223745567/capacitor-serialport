@@ -68,4 +68,5 @@ window.addEventListener("serialportdata", (val) => {
     console.log("页面串口数据:", JSON.stringify(val))
 })
 ```
+
 </docgen-api>
